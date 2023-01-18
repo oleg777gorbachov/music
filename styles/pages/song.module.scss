@@ -1,0 +1,68 @@
+@import "../_vars";
+
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.author {
+  color: rgba($color: $white, $alpha: 0.5);
+}
+
+.image {
+  border-radius: 6px;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.play {
+  font-size: 44px;
+  cursor: pointer;
+}
+
+.line {
+  width: 12rem;
+  height: 8px;
+  background-color: rgba($color: $white, $alpha: 1);
+  border-radius: 4px;
+}
+
+.like {
+  font-size: 28px;
+  cursor: pointer;
+  min-width: 24px;
+
+  &include {
+    color: $red;
+    font-size: 28px;
+    cursor: pointer;
+    min-width: 24px;
+  }
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.playlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  gap: 1rem;
+
+  svg {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+}
+

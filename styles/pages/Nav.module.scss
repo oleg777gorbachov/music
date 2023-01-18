@@ -1,0 +1,221 @@
+@import "../_vars";
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    background: linear-gradient(
+      90deg,
+      rgba(223, 141, 90, 1) 0%,
+      rgba(238, 88, 80, 1) 100%
+    );
+    background-size: 300%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedText 10s linear infinite;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  @media screen and (max-width: 568px) {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: calc(100vh);
+    width: 200px;
+    padding: 50px 10px 30px 20px;
+    background-color: rgba($color: $dark, $alpha: 0.8);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s;
+    transform: translate(100%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 2rem;
+  }
+
+  &Open {
+    transform: translate(0%);
+  }
+
+  &Mobile {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    @media screen and (max-width: 568px) {
+      display: initial;
+    }
+  }
+}
+
+.close {
+  font-size: 2.5rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.animation {
+  position: absolute;
+  width: 100%;
+  max-width: $max-width;
+  height: 25rem;
+  left: 50%;
+  transform: translate(-50%);
+  top: -5rem;
+  background-position: center !important;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    225deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  filter: blur(50px);
+  z-index: -1;
+  animation: animationScale 10s ease-in;
+  opacity: 0.7;
+}
+
+.player {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(50px);
+  border-radius: 6px;
+  transition: all 0.3s;
+  animation: showPlayer 0.5s;
+  background: rgba(49, 49, 49, 0.6);
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .volume {
+    font-size: 24px;
+    cursor: pointer;
+
+    &Input {
+      border: none;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}
+
+#time {
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  display: initial;
+  padding: 0;
+  @media screen and (max-width: 768px) {
+    top: -18px;
+  }
+  &::-moz-range-track {
+    background-color: $white;
+  }
+}
+
+.fade {
+  position: fixed;
+  width: 100vw;
+  height: 10px;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient(270deg, #0fffc1, #7e0fff);
+  filter: blur(50px);
+  background-size: 200% 200%;
+  animation: animatedText 30s linear infinite;
+  z-index: -1;
+}
+
+.songName {
+  max-width: fit-content;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    max-width: 100px;
+
+    div {
+      white-space: pre;
+      animation: slide-left 7s ease-in infinite;
+    }
+  }
+}
+
+@keyframes showPlayer {
+  0% {
+    transform: translate(0%, 300%);
+  }
+  70% {
+    transform: translate(0%, -30%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes animationScale {
+  0% {
+    transform: translate(-50%) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%) scale(1);
+    opacity: 0.7;
+  }
+}
+
+@keyframes animatedText {
+  0% {
+    background-position: 0px 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0px 50%;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}

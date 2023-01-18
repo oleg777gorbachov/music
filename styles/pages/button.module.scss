@@ -1,0 +1,48 @@
+@import "../_vars";
+
+.button {
+  padding: 10px 20px;
+  background: rgb(238, 174, 202);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  border-radius: 6px;
+  border: 1px solid $white;
+  color: $dark;
+  text-align: center;
+  font-weight: 500;
+  transition: all 0.5s;
+  color: rgba($color: $dark, $alpha: 0.8);
+  cursor: pointer;
+  background-size: 300%;
+  margin: 1rem 0;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0px 0px 50px -15px rgba($color: $blue, $alpha: 0.5);
+    animation: animatedText 10s linear infinite;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    color: rgba($color: $dark, $alpha: 0.3);
+
+    &:hover {
+      box-shadow: none;
+      animation: none;
+    }
+  }
+}
+
+@keyframes animatedText {
+  0% {
+    background-position: 0px 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0px 50%;
+  }
+}

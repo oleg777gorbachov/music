@@ -1,0 +1,19 @@
+@import "../_vars";
+
+.box {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgba($color: $green, $alpha: 0.3);
+  border: 1px solid $green;
+  transition: all 0.3s;
+}
+
+.box_alert {
+  background-color: rgba($color: $orange, $alpha: 0.3);
+  border: 1px solid $orange;
+}
+
+.box_danger {
+  background-color: rgba($color: $red, $alpha: 0.3);
+  border: 1px solid $red;
+}

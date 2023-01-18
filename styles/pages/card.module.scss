@@ -1,0 +1,7 @@
+@import "../_vars";
+.card {
+  padding: 20px;
+  border: 1px solid $white;
+  border-radius: 8px;
+  background-color: rgba($color: $dark, $alpha: 0.6);
+}
